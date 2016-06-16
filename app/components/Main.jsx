@@ -11,7 +11,6 @@ class Main extends Component {
     return (
       <div>
         <Nav/>
-        <h2>Main Container</h2>
         {this.props.children}
       </div>
     )

@@ -1,11 +1,20 @@
 import React, { Component, PropTypes } from 'react';
-
+import {
+  Row,
+  Column,
+  TopBar,
+  TopBarTitle,
+  TopBarRight,
+  Menu,
+  MenuItem
+} from 'react-foundation';
 
 const WeatherMessage = ({city, temp}) => {
     return (
-      <div>
-        The current temperature is {temp} in {city}.
-      </div>
+      <h3>
+          
+        IF is {temp}° in {city};.
+      </h3>
     );
 }
 

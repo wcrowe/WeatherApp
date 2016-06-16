@@ -3,7 +3,8 @@ import Nav from './Nav';
 import WeatherForm from './WeatherForm';
 import WeatherMessage from './WeatherMessage';
 import openWeatherApi from '../api/openWeatherMap';
-
+import 'react-foundation-components/lib/_typography.scss';
+import {TextAlignment} from 'react-foundation-components/lib/text-alignment';
 
 class Weather extends Component {
   constructor(props, context) {
@@ -35,7 +36,7 @@ class Weather extends Component {
     const {isLoading, city, temp} = this.state;
     const renderMessage = () => {
       if (isLoading) {
-        return <h3>Fetching Weather...</h3>
+        return (<TextAlignment alignment="center"><h3>Fetching Weather...</h3></TextAlignment>);
       }
       else if (city && temp) {
         return <WeatherMessage city={this.state.city} temp={this.state.temp}/>;
@@ -43,9 +44,13 @@ class Weather extends Component {
     }
     return (
       <div>
-        <h2>Weather App</h2>
+        <TextAlignment alignment="center">
+          <h1>Weather App</h1>
+        </TextAlignment>
         <WeatherForm onSearch={this.handleSearch}/>
-        {renderMessage()}
+        <TextAlignment alignment="center">
+          {renderMessage()}
+        </TextAlignment>
       </div>
     )
 

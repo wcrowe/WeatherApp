@@ -1,5 +1,16 @@
 import React, {Component, PropTypes} from 'react';
 import Nav from './Nav';
+import 'react-foundation-components/lib/_typography.scss';
+import {
+  FormField,
+  FormFieldInput,
+  FormFieldLabel,
+  FormFieldError,
+  FormFieldInline,
+  FormFieldButton,
+} from 'react-foundation-components/lib/forms';
+import {Row, Column} from 'react-foundation-components/lib/grid';
+import { Button } from 'react-foundation-components/lib/button';
 
 
 class WeatherForm extends Component {
@@ -8,7 +19,7 @@ class WeatherForm extends Component {
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
-  onFormSubmit =  (event) => {
+  onFormSubmit = (event) => {
     event.preventDefault();
     let city = this.refs.city.value;
     if (city.length > 0) {
@@ -20,9 +31,20 @@ class WeatherForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.onFormSubmit}>
-          <input type="text" placeholder="Enter in a city" ref="city"></input>
-          <button>Get Weather</button>
+        <form onSubmit={this.onFormSubmit} >
+          <Row>
+            <Column largeCentered="centered" small={4}>
+              <FormField>
+                <input type="search" placeholder="Enter in a city" ref="city"></input>
+              </FormField>
+              <FormField>
+                <Button submit expanded hollow onClick={this.onFormSubmit}>
+                  Get Weather
+                  </Button>
+
+               </FormField>
+            </Column>
+          </Row>
         </form>
       </div>
     )
