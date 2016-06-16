@@ -17,7 +17,7 @@ module.exports = {
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
     './app/index'
-    ],
+  ],
   devtool: 'cheap-module-source-map',
   output: {
     path: __dirname,
@@ -29,14 +29,14 @@ module.exports = {
       index: './public/index.html'
     }
   },
-  resolve:{
+  resolve: {
     root: __dirname,
-    alias: {
-    },
-    extensions: ['','.js', '.jsx']
+    alias: {},
+    extensions: ['', '.js', '.jsx']
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('style.css', { allChunks: true })
   ],
   sassLoader: {
     precision: 8,
@@ -82,7 +82,7 @@ module.exports = {
       ],
     },
   },
-  module:{
+  module: {
     loaders: [{
       loaders: ['babel-loader'],
       test: /\.jsx?$/,
@@ -92,6 +92,9 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: DEV ? SASS_LOADERS.join('!') : ExtractTextPlugin.extract.apply(null, SASS_LOADERS),
+      }, {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
       },
       {
         test: /\.(gif|jpe?g|png|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
