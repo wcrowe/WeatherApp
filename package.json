@@ -14,7 +14,6 @@
     "express": "^4.13.4",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "react-foundation": "^0.6.8",
     "react-foundation-components": "^0.11.2",
     "react-router": "^2.4.1"
   },
@@ -35,7 +34,6 @@
     "node-sass": "^3.7.0",
     "object-assign": "^4.1.0",
     "postcss-loader": "^0.9.1",
-    "pure-css": "^1.0.4",
     "react-css-modules": "^3.7.6",
     "react-hot-loader": "^3.0.0-beta.2",
     "react-responsive-mixin": "^0.3.5",

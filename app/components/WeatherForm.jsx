@@ -38,7 +38,7 @@ class WeatherForm extends Component {
                 <input type="search" placeholder="Enter in a city" ref="city"></input>
               </FormField>
               <FormField>
-                <Button submit expanded hollow onClick={this.onFormSubmit}>
+                <Button type="submit" expanded hollow>
                   Get Weather
                   </Button>
 

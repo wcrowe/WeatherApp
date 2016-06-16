@@ -13,7 +13,7 @@ const WeatherMessage = ({city, temp}) => {
     return (
       <h3>
           
-        IF is {temp}° in {city};.
+        It is {temp}° in {city};.
       </h3>
     );
 }
