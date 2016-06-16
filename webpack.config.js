@@ -1,5 +1,13 @@
 var path = require('path');
 var webpack = require('webpack');
+
+
+const DEV = 'DEV';
+const SASS_LOADERS = [
+  'style',
+  `css?modules${DEV ? '&localIdentName=[path]---[local]' : ''}!postcss!sass`,
+];
+
 module.exports = {
   entry: [
     'react-hot-loader/patch',
@@ -32,7 +40,13 @@ module.exports = {
       loaders: ['babel-loader'],
       test: /\.jsx?$/,
       exclude: /(node_modules|bower_componenets)/
-    }]
+    }
+      ,
+      {
+        test: /\.scss$/,
+        loader: DEV ? SASS_LOADERS.join('!') : ExtractTextPlugin.extract.apply(null, SASS_LOADERS),
+      }
+    ]
   }
 }
 
