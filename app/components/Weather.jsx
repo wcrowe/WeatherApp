@@ -1,15 +1,14 @@
 import React, {Component, PropTypes} from 'react';
-import Nav from './Nav';
 import WeatherForm from './WeatherForm';
 import WeatherMessage from './WeatherMessage';
 import openWeatherApi from '../api/openWeatherMap';
 import 'react-foundation-components/lib/_typography.scss';
-import {TextAlignment} from 'react-foundation-components/lib/text-alignment';
+import { TextAlignment } from 'react-foundation-components/lib/text-alignment';
 
 class Weather extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {isLoading: false};
+    this.state = { isLoading: false };
     this.handleSearch = this.handleSearch.bind(this);
   }
 
