@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
 
@@ -9,4 +9,3 @@ ReactDOM.render(
    <App />,
   rootEl
 );
-

@@ -1,12 +1,12 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 
-const About = (props, context) => {
+const About = () => {
   return (
     <h2>
       About
     </h2>
   );
-}
+};
 
 export default About;
