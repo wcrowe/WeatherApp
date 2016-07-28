@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import Nav from './Nav';
+import Nav from './WeatherNav';
 import 'react-foundation-components/lib/_typography.scss';
 import {
   FormField,

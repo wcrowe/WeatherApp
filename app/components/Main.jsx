@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Nav from './Nav';
+import WeatherNav from './WeatherNav';
 
 
 class Main extends Component {
@@ -10,7 +10,7 @@ class Main extends Component {
   render () {
     return (
       <div>
-        <Nav/>
+        <WeatherNav/>
         {this.props.children}
       </div>
     )
