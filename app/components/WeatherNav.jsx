@@ -1,17 +1,8 @@
-import React, {Component, PropTypes} from 'react';
-import {Link, IndexLink} from 'react-router';
-import Navbar from 'react-bootstrap/lib/Navbar';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem from 'react-bootstrap/lib/NavItem';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
-import Form from 'react-bootstrap/lib/Form';
-import FormControl from 'react-bootstrap/lib/FormControl';
-import Button from 'react-bootstrap/lib/Button';
-import Panel from 'react-bootstrap/lib/Panel';
-import {IndexLinkContainer, LinkContainer} from 'react-router-bootstrap';
+import React, { Component, PropTypes } from 'react';
+import { Link, IndexLink } from 'react-router';
+import { Menu, MenuItem } from 'react-foundation-components/lib/menu';
 
-
+//https://github.com/aruberto/react-foundation-components
 class WeatherNav extends Component {
   constructor(props, context) {
     super(props, context);
@@ -35,7 +26,7 @@ class WeatherNav extends Component {
   render() {
     return (
 
-      <Navbar>
+      <MenuAlignments.Left>
         <Navbar.Header>
           <Navbar.Brand>
             Weather
@@ -43,27 +34,27 @@ class WeatherNav extends Component {
         </Navbar.Header>
         <Nav>
 
-          <IndexLinkContainer to="/" activeClassName="active"
-                              activeStyle={{ fontWeight: 'bold' }}><NavItem>Weather</NavItem></IndexLinkContainer>
-          <LinkContainer to="/about" activeClassName="active"
-                         activeStyle={{ fontWeight: 'bold' }}><NavItem>About</NavItem></LinkContainer>
-          <LinkContainer to="/examples" activeClassName="active"
-                         activeStyle={{ fontWeight: 'bold' }}><NavItem>Examples</NavItem></LinkContainer>
+      //     <IndexLinkContainer to="/" activeClassName="active"
+      //                         activeStyle={{ fontWeight: 'bold' }}><NavItem>Weather</NavItem></IndexLinkContainer>
+      //     <LinkContainer to="/about" activeClassName="active"
+      //                    activeStyle={{ fontWeight: 'bold' }}><NavItem>About</NavItem></LinkContainer>
+      //     <LinkContainer to="/examples" activeClassName="active"
+      //                    activeStyle={{ fontWeight: 'bold' }}><NavItem>Examples</NavItem></LinkContainer>
 
-        </Nav>
-        <Nav  pullRight={true}>
+      //   </Nav>
+      //   <Nav  pullRight={true}>
 
-          <NavItem>
-            <form inline onSubmit={this.onFormSubmit} >
+      //     <NavItem>
+      //       <form inline onSubmit={this.onFormSubmit} >
 
-              <FormControl type="text" bgSize="small" placeholder="Search Weather"/>
+      //         <FormControl type="text" bgSize="small" placeholder="Search Weather"/>
 
-              <Button type="submit">Get Weather</Button>
+      //         <Button type="submit">Get Weather</Button>
 
-            </form>
-            </NavItem>
-      </Nav>
-      </Navbar >
+      //       </form>
+      //       </NavItem>
+      // </Nav>
+      // </Navbar >
 
     );
   }
