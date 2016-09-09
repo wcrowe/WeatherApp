@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link, IndexLink } from 'react-router';
 import { Menu, MenuItem } from 'react-foundation-components/lib/menu';
+import { TopBar, TopBarContent, TopBarItem, TopBarTitle } from 'react-foundation-components/lib/top-bar';
 
 //https://github.com/aruberto/react-foundation-components
 class WeatherNav extends Component {
@@ -24,15 +25,14 @@ class WeatherNav extends Component {
 
 
   render() {
-    return (
-
-      <MenuAlignments.Left>
-        <Navbar.Header>
-          <Navbar.Brand>
-            Weather
-          </Navbar.Brand>
-        </Navbar.Header>
-        <Nav>
+    return (<TopBar>
+      <TopBarTitle>
+        <Menu>
+          <MenuItem horzital text>Weather</MenuItem>
+        </Menu>
+      </TopBarTitle>
+             </TopBar>
+      //  <Nav>
 
       //     <IndexLinkContainer to="/" activeClassName="active"
       //                         activeStyle={{ fontWeight: 'bold' }}><NavItem>Weather</NavItem></IndexLinkContainer>
