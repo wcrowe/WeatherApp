@@ -1,26 +1,18 @@
-import React, { Component, PropTypes } from 'react';
-import {
-  Row,
-  Column,
-  TopBar,
-  TopBarTitle,
-  TopBarRight,
-  Menu,
-  MenuItem
-} from 'react-foundation';
+import React, { PropTypes } from 'react';
 
-const WeatherMessage = ({city, temp}) => {
-    return (
-      <h3>
-          
-        It is {temp}° in {city}.
-      </h3>
-    );
-}
+const WeatherMessage = ({ city, temp }) => {
+  return (
+    <div>
+    <h3>
+       It is {temp}° in {city}.
+    </h3>
+      </div>
+  );
+};
 
 WeatherMessage.propTypes = {
-    city: PropTypes.string.isRequired,
-    temp: PropTypes.number
-}
+  city: PropTypes.string.isRequired,
+  temp: PropTypes.number
+};
 
 export default WeatherMessage;

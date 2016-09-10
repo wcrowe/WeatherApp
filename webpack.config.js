@@ -18,7 +18,7 @@ module.exports = {
     'webpack/hot/only-dev-server',
     './app/index'
   ],
-  devtool: 'cheap-module-source-map',
+  devtool: 'cheap-eval-source-map',  //debug use eval, cheap-eval-source-map, cheap-module-eval-source-map or eval-source-map
   output: {
     path: __dirname,
     filename: './public/bundle.js'
@@ -94,7 +94,8 @@ module.exports = {
         loader: DEV ? SASS_LOADERS.join('!') : ExtractTextPlugin.extract.apply(null, SASS_LOADERS),
       }, {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'),
+        include: /flexboxgrid/,
       },
       {
         test: /\.(gif|jpe?g|png|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,

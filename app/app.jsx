@@ -20,8 +20,6 @@ import Examples from './components/Examples';
 export default class App extends Component {
   render() {
     return (
-
-
       <Router history={browserHistory}>
         <Route path="/" component={Main}>
           <Route name="about" path="/about" component={About} />

@@ -1,9 +1,12 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router';
-import { Menu, MenuItem } from 'react-foundation-components/lib/menu';
-import { TopBar, TopBarContent, TopBarItem, TopBarTitle } from 'react-foundation-components/lib/top-bar';
+import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
+import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
+import Formsy from 'formsy-react';
+import FormsyText from 'formsy-material-ui/lib/FormsyText';
 
-//https://github.com/aruberto/react-foundation-components
+// https://github.com/aruberto/react-foundation-components
 class WeatherNav extends Component {
   constructor(props, context) {
     super(props, context);
@@ -11,51 +14,41 @@ class WeatherNav extends Component {
   }
 
   onFormSubmit = (event) => {
-    debugger;
+    // debugger;
     event.preventDefault();
-    alert('here');
-  }
+  };
 
-// <Col sm={3} md={3} pullRight>
-// <form onSubmit={this.onSearch}>
-// <input type="search" placeholder="Search Weather"/>
-// <button type="submit">Get Weather</button>
-// </form>
-// </Col>
 
+// Indexroute and IndexLink
+// https://github.com/reactjs/react-router/blob/master/docs/guides/IndexRoutes.md
 
   render() {
-    return (<TopBar>
-      <TopBarTitle>
-        <Menu>
-          <MenuItem horzital text>Weather</MenuItem>
-        </Menu>
-      </TopBarTitle>
-             </TopBar>
-      //  <Nav>
-
-      //     <IndexLinkContainer to="/" activeClassName="active"
-      //                         activeStyle={{ fontWeight: 'bold' }}><NavItem>Weather</NavItem></IndexLinkContainer>
-      //     <LinkContainer to="/about" activeClassName="active"
-      //                    activeStyle={{ fontWeight: 'bold' }}><NavItem>About</NavItem></LinkContainer>
-      //     <LinkContainer to="/examples" activeClassName="active"
-      //                    activeStyle={{ fontWeight: 'bold' }}><NavItem>Examples</NavItem></LinkContainer>
-
-      //   </Nav>
-      //   <Nav  pullRight={true}>
-
-      //     <NavItem>
-      //       <form inline onSubmit={this.onFormSubmit} >
-
-      //         <FormControl type="text" bgSize="small" placeholder="Search Weather"/>
-
-      //         <Button type="submit">Get Weather</Button>
-
-      //       </form>
-      //       </NavItem>
-      // </Nav>
-      // </Navbar >
-
+    return (
+      <Toolbar>
+        <ToolbarGroup>
+          <ToolbarTitle text="Weather App" />
+          <IndexLink to="/" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>
+            <MenuItem primaryText="Weather" />
+          </IndexLink>
+          <Link to="about" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>
+            <MenuItem primaryText="About" />
+          </Link>
+          <Link to="examples" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>
+            <MenuItem primaryText="Examples" />
+          </Link>
+        </ToolbarGroup>
+        <ToolbarGroup>
+          <Formsy.Form onValidSubmit={this.onFormSubmit}>
+            <FormsyText
+              name="topBarSearch"
+              validationError="Required"
+              required
+              hintText="Search Weather" type="text"
+            />
+            <RaisedButton type="submit" label="Get Weather" primary={ true } />
+          </Formsy.Form>
+        </ToolbarGroup>
+      </Toolbar>
     );
   }
 }

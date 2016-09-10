@@ -1,17 +1,7 @@
-import React, {Component, PropTypes} from 'react';
-import Nav from './WeatherNav';
-import 'react-foundation-components/lib/_typography.scss';
-import {
-  FormField,
-  FormFieldInput,
-  FormFieldLabel,
-  FormFieldError,
-  FormFieldInline,
-  FormFieldButton,
-} from 'react-foundation-components/lib/forms';
-import {Row, Column} from 'react-foundation-components/lib/grid';
-import { Button } from 'react-foundation-components/lib/button';
-
+import React, { Component, PropTypes } from 'react';
+import RaisedButton from 'material-ui/RaisedButton';
+import Formsy from 'formsy-react';
+import FormsyText from 'formsy-material-ui/lib/FormsyText';
 
 class WeatherForm extends Component {
   constructor(props, context) {
@@ -20,41 +10,31 @@ class WeatherForm extends Component {
   }
 
   onFormSubmit = (event) => {
-    event.preventDefault();
-    let city = this.refs.city.value;
+   // debugger;
+   // event.preventDefault();
+    let city = event.searchByCity;
     if (city.length > 0) {
-      this.refs.city.value = '';
+      event.searchByCity = '';
+      this.city.setState({ value: "" })
       this.props.onSearch(city);
     }
-  }
+  };
 
   render() {
     return (
       <div>
-        <form onSubmit={this.onFormSubmit} >
-          <Row>
-            <Column largeCentered="centered" small={4}>
-              <FormField>
-                <input type="search" placeholder="Enter in a city" ref="city"></input>
-              </FormField>
-              <FormField>
-                <Button type="submit" expanded hollow>
-                  Get Weather
-                  </Button>
-
-               </FormField>
-            </Column>
-          </Row>
-        </form>
+        <Formsy.Form onValidSubmit={this.onFormSubmit} >
+          <FormsyText name="searchByCity" type="search" placeholder="Enter in a city" ref={(c) => { this.city = c; }} />
+          <RaisedButton type="submit" label="Get Weather" primary={true} />
+        </Formsy.Form>
       </div>
-    )
+    );
 
   }
-}
+};
 
 WeatherForm.propTypes = {
   onSearch: PropTypes.func.isRequired
-}
-
+};
 
 export default WeatherForm;
