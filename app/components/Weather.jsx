@@ -53,7 +53,7 @@ class Weather extends Component {
               <div><h1>Weather App</h1></div>
             </Cell>
 
-            <Cell is="middle t">
+            <Cell is="middle tablet-4 phone-4">
               <WeatherForm onSearch={this.handleSearch}/>
             </Cell>
 

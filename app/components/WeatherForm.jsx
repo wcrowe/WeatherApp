@@ -15,7 +15,7 @@ class WeatherForm extends Component {
     let city = event.searchByCity;
     if (city.length > 0) {
       event.searchByCity = '';
-      this.city.setState({ value: "" })
+      this.city.setState({ value: "" });
       this.props.onSearch(city);
     }
   };
