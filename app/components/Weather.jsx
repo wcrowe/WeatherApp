@@ -45,25 +45,29 @@ class Weather extends Component {
       }
     }
     return (
-      <div>
+     <div>
         <Grid>
           <Row is="center">
-          <Row>
-            <Cell is="middle tablet-4 phone-4">
+            <Cell is="12 middle">
               <div><h1>Weather App</h1></div>
             </Cell>
-
-            <Cell is="middle tablet-4 phone-4">
+          </Row>
+        </Grid>
+        <Grid>
+          <Row is="center">
+            <Cell is="2">
               <WeatherForm onSearch={this.handleSearch}/>
             </Cell>
-
-            <Cell is="middle">
+          </Row>
+        </Grid>
+        <Grid>
+          <Row is="center">
+            <Cell is="2">
               {renderMessage()}
             </Cell>
           </Row>
-            </Row>
         </Grid>
-      </div>
+     </div>
     );
   }
 }
