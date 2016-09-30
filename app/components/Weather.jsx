@@ -48,7 +48,7 @@ class Weather extends Component {
      <div>
         <Grid>
           <Row is="center">
-            <Cell is="12 middle">
+            <Cell is="2 middle">
               <div><h1>Weather App</h1></div>
             </Cell>
           </Row>

@@ -1,15 +1,19 @@
 import React from 'react';
-import { TextAlignment } from 'react-foundation-components/lib/text-alignment';
-import { Row, Column } from 'react-foundation-components/lib/grid';
+import { Grid, Row, Cell } from 'react-inline-grid';
 
 const About = () => {
   return (
-  //  <TextAlignment alignment="center">
+
+    <Grid>
+      <Row is="center">
+        <Cell is="2">
     <h2>
       About
     </h2>
-    //  <p>This is the about page.</p>
-    //  </TextAlignment>
+      <p>This is the about page.</p>
+          </Cell>
+      </Row>
+    </Grid>
   );
 };
 
